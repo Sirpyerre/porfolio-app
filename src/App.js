@@ -1,21 +1,22 @@
 import React, {Component} from 'react';
 import Projects from './Projects';
 import SocialProfiles from './SocialProfiles';
+import Title from './Title';
 import profile from './assets/profile.png';
-
 class App extends Component {
     state = { displayBio: false };
 
     toggleDisplayBio = () => {
         this.setState({ displayBio: !this.state.displayBio });
-    }
+    };
 
     render() {
         return (
             <div>
                 <h1>Hola.</h1>
                 <img src={profile} alt="profile" className='profile'/>
-                <p>Mi nombre es Pedro. I'm a software engineer.</p>
+                <p>Mi nombre es Pedro.</p>
+                <Title />
                 <p>I'm always lookink forward to working on meaningful projects</p>
                 {
                     this.state.displayBio ? (
