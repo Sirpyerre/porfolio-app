@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import Projects from './Projects';
 import SocialProfiles from './SocialProfiles';
 import Title from './Title';
-import profile from './assets/profile.png';
+import profile from './assets/peter_lentes_wfh.jpg';
 class App extends Component {
     state = { displayBio: false };
 
@@ -13,9 +13,9 @@ class App extends Component {
     render() {
         return (
             <div>
-                <h1>Hola.</h1>
+                <h1>Hello.</h1>
                 <img src={profile} alt="profile" className='profile'/>
-                <p>Mi nombre es Pedro.</p>
+                <p>Mi name is Pedro Rojas</p>
                 <Title />
                 <p>I'm always lookink forward to working on meaningful projects</p>
                 {
