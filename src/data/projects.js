@@ -15,7 +15,7 @@ const PROJECTS = [
     },
     {
         id:2,
-        title: 'Custimize web app in Yii Framework 1.x',
+        title: 'Customized web app in Yii Framework 1.x',
         description: 'Orders, devolutions,  remissions Web App',
         link: 'https://desenv.sistemauno.com/mx/unoi/simple-erp/index.php?r=site/login',
         image: project3
