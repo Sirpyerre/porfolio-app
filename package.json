@@ -13,9 +13,12 @@
   "scripts": {
     "dev": "parcel src/index.html",
     "build": "parcel build src/index.html",
-    "start": "npm run build && live-server dist"
+    "start": "npm run build && live-server dist",
+    "predeploy": "rm -rf dist && parcel build index.html --public-url porfolio-app",
+    "deploy": "gh-pages -d dist"
   },
   "devDependencies": {
-    "@babel/core": "^7.4.5"
+    "@babel/core": "^7.4.5",
+    "gh-pages": "^2.0.1"
   }
 }
