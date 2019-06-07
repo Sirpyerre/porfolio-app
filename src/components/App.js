@@ -2,8 +2,8 @@ import React, {Component} from 'react';
 import Projects from './Projects';
 import SocialProfiles from './SocialProfiles';
 import Title from './Title';
+import Header from './Header'
 import profile from '../assets/peter_lentes_wfh.jpg';
-import Jokes from './Jokes';
 
 class App extends Component {
     state = { displayBio: false };
@@ -15,8 +15,9 @@ class App extends Component {
     render() {
         return (
             <div>
-                <h1>Hello.</h1>
+                <Header/>
                 <img src={profile} alt="profile" className='profile'/>
+                <h1>Hello.</h1>
                 <p>Mi name is Pedro Rojas</p>
                 <Title />
                 <p>I'm always lookink forward to working on meaningful projects</p>
@@ -38,8 +39,7 @@ class App extends Component {
                 <Projects/>
                 <hr/>
                 <SocialProfiles/>
-                <hr/>
-                <Jokes/>
+
             </div>
         );
     }

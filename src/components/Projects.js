@@ -5,7 +5,7 @@ const Project = props => {
     const {title, image, description, link} = props.project;
 
     return (
-        <div style={{display: 'inline-block', width: 300, margin: 100}}>
+        <div className='project'>
             <h3>{title}</h3>
             <img src={image} alt="profile" style={{width: 200, height: 130}}/>
             <p>{description}</p>

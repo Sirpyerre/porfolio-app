@@ -20,6 +20,12 @@ h1,h2,h3,h4,h5 {
     font-family: 'EconomicaBold';
 }
 
+.project{
+    display: inline-block;
+    width: 300px;
+    margin: 10px 50px 50px 50px;
+}
+
 .profile{
     width: 200px;
     height: 200px;

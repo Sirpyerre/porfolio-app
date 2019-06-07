@@ -1,51 +1,41 @@
 import React, {Component} from 'react';
+import Header from './Header'
 
-const ItemJoke = props => {
-
-    console.log('props joke', props);
-    const { setup, punchline} = props.joke;
-
-    return (
-        <p>
-            {setup} <em>{punchline}</em>
-        </p>
-    )
-};
+const ItemJoke = ({joke: {setup, punchline}}) => (
+    <p style={{ margin: 10}}>
+        {setup} <em>{punchline}</em>
+    </p>
+);
 
 class Jokes extends Component {
-    state = {joke: {}, displayJokes: false};
+    state = { joke: {},jokes: [] };
 
     toggleDisplayJokes = () => {
         this.setState({displayJokes: !this.state.displayJokes});
     };
-
     componentDidMount() {
-        fetch('https://official-joke-api.appspot.com/jokes/ten')
+        fetch('https://official-joke-api.appspot.com/random_joke')
             .then(response => response.json())
-            .then(json => this.setState({jokes: json}))
+            .then(json => this.setState({ joke: json }))
     }
 
+    fetchJokes = () => {
+        fetch('https://official-joke-api.appspot.com/random_ten')
+            .then(response => response.json())
+            .then(json => this.setState({ jokes: json }))
+    };
+
     render() {
-        // const { setup, punchline} = this.state.joke;
-
-        const JOKES = this.state.jokes;
-
         return (
             <div>
+                <Header/>
+                <h2>Highlighted Joke</h2>
+                <ItemJoke joke={this.state.joke}/>
+                <hr/>
+                <h3>Want ten new Jokes?</h3>
+                <button onClick={this.fetchJokes}>Click me!</button>
                 {
-                    this.state.displayJokes ? (
-                        <div>
-                            {
-                                JOKES.map(JOKE => (
-                                    <ItemJoke key={JOKE.id} joke={JOKE}/>
-                                ))
-                            }
-                            <button onClick={this.toggleDisplayJokes}>Hide jokes</button>
-                        </div>
-                    ) : (
-                        <button onClick={this.toggleDisplayJokes}>Show 10 jokes</button>
-                    )
-
+                    this.state.jokes.map(joke => (<ItemJoke key={joke.id} joke={joke}/>))
                 }
             </div>
         )
