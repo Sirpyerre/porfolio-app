@@ -14,7 +14,7 @@
     "dev": "parcel src/index.html",
     "build": "parcel build src/index.html",
     "start": "npm run build && live-server dist",
-    "predeploy": "rm -rf dist && parcel build index.html --public-url porfolio-app",
+    "predeploy": "rm -rf dist && parcel build src/index.html --public-url porfolio-app",
     "deploy": "gh-pages -d dist"
   },
   "devDependencies": {
