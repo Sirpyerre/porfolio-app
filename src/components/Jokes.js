@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-// import Header from './Header'
 
 const ItemJoke = ({joke: {setup, punchline}}) => (
     <p style={{ margin: 10}}>
@@ -28,7 +27,7 @@ class Jokes extends Component {
     render() {
         return (
             <div>
-                {/*<Header/>*/}
+
                 <h2>Highlighted Joke</h2>
                 <ItemJoke joke={this.state.joke}/>
                 <hr/>
